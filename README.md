@@ -1,6 +1,6 @@
-# Smartgrid starter
+# Riding
 
-My starter pack for web-development
+Лэндинг про обзор по городу
 
 ### Tools
 
