@@ -37,19 +37,23 @@ var path = {
 		html: "src/*.html",
 		js: "src/js/*.js",
 		css: "src/less/styles.less",
-		img: "src/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}"
+		img: "src/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}",
+		fonts: "src/fonts/*.*"
+
 	},
 	build: {
 		html: "build/",
 		js: "build/js/",
 		css: "build/css/",
-		img: "build/img/"
+		img: "build/img/",
+		fonts: "build/fonts/"
 	},
 	watch: {
 		html: "src/**/*.html",
 		js: "src/js/**/*.js",
 		css: "src/less/**/*.less",
-		img: "src/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}"
+		img: "src/img/**/*.{jpg,png,svg,gif,ico,webmanifest,xml}",
+		fonts: "src/fonts/*.*"
 	},
 	clean: "./build/*"
 }
@@ -111,7 +115,13 @@ function img() {
 		}),
 		imageminPngquant({quality: [0.7, 0.75]})
 	])))
-	.pipe(dest('./build/img'))
+	.pipe(dest(path.build.img))
+	.pipe(gulpif(isSync, browserSync.stream()))
+}
+
+function fonts() {
+	return src(path.src.fonts)
+	.pipe(dest(path.build.fonts))
 	.pipe(gulpif(isSync, browserSync.stream()))
 }
 
@@ -134,6 +144,7 @@ function watchFiles() {
 	watch([path.watch.css], styles);
 	watch([path.watch.js], js);
 	watch([path.watch.img], img);
+	watch([path.watch.fonts], fonts);
 	watch('./smartgrid.js', grid);
 }
 
@@ -155,11 +166,12 @@ function deploy(cb) {
 // exports.css = styles;
 // exports.js = js;
 // exports.img = img;
+// exports.fonts = fonts;
 // exports.watch = watchFiles;
 
 exports.deploy = deploy;
 
-let build = series(clean, parallel(html, styles, js, img));
+let build = series(clean, parallel(html, styles, js, img, fonts));
 task('build', series(grid, build));
 task('watch', series(build, watchFiles));
 task('grid', grid);

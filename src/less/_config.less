@@ -1,28 +1,42 @@
 // USER VARIABLES SECTION
 
-@accent:     orange; // Accent Color
-@fontsize:   16px; // Body Font Size
-@textcolor:  #333; // Text Color
-@mainfamily: 'Cuprum', sans-serif; // Main Font Family
+@accent:     #c328b1; // Accent Color
+@fontsize:   15px; // Body Font Size
+@textcolor:  #000; // Text Color
+@mainfamily: 'Gotham Pro', sans-serif; // Main Font Family
 
 
 // FONTS LOAD SECTION
 
-// .font(@f-name, @f-style, @f-weight, @f-url) {
-// 	@font-face {
-// 		font-family: @f-name;
-// 		font-style: @f-style;
-// 		font-weight: @f-weight;
-// 		src: url(@f-url) format('woff2');
-// 	}
-// }
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url('../fonts/GothamPro-Black.eot');
+	src: url('../fonts/GothamPro-Black.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/GothamPro-Black.woff') format('woff'),
+	url('../fonts/GothamPro-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
 
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url('../fonts/GothamPro-Bold.eot');
+	src: url('../fonts/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/GothamPro-Bold.woff') format('woff'),
+	url('../fonts/GothamPro-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
 
-// .font('roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-// .font('roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
-// .font('roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-// .font('roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
-
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url('../fonts/GothamPro.eot');
+	src: url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/GothamPro.woff') format('woff'),
+	url('../fonts/GothamPro.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
 
 // GENERAL DOCUMENT STYLES
 
@@ -36,32 +50,33 @@
     .wrapper();
 }
 
-::placeholder {
-	color: #666;
-}
+// ::placeholder {
+// 	color: #666;
+// }
 
-::selection {
-	background-color: @accent;
-	color: #fff;
-}
+// ::selection {
+// 	background-color: @accent;
+// 	color: #fff;
+// }
 
-input, textarea {
-	outline: none;
-	&:focus:required:invalid { border-color: red }
-	&:required:valid { border-color: green }
-}
+// input, textarea {
+// 	outline: none;
+// 	&:focus:required:invalid { border-color: red }
+// 	&:required:valid { border-color: green }
+// }
 
 body {
 	font-size: @fontsize;
 	min-width: 320px;
 	position: relative;
-	line-height: 1.65;
+	// line-height: 1.65;
 	font-family: @mainfamily;
-	overflow-x: hidden;
+	font-weight: 400;
+	// overflow-x: hidden;
 	color: @textcolor;
 }
 
 // IMPORT SECTION
 
 @import "smart-grid.less";
-@import (less) '../../node_modules/imagelightbox/dist/imagelightbox.min.css';
+// @import (less) '../../node_modules/imagelightbox/dist/imagelightbox.min.css';

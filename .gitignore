@@ -4,6 +4,7 @@
 /node_modules/
 # production
 /build
+/addons
 
 # misc
 .DS_Store
