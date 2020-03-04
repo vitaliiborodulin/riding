@@ -22,9 +22,9 @@ module.exports = {
         xxs: {
             width: '480px',
             fields: '20px'
-        },
-        // xxs: {
-		// 	width: '350px',
+        }
+        // xxxs: {
+		// 	width: '320px',
         // }
 	},
 	detailedCalc: true 
