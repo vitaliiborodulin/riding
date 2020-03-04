@@ -1,19 +1,36 @@
 .btn {
     font-size: 18px;
     font: inherit;
+    background: transparent;
     text-align: center;
-    padding: 19px 50px;
+    padding: 14px 35px;
     .xxs-block({
         display: block;
         padding: 19px 0;
         width: 90%;
     });
+    border: 2px solid #c328b1;
     border-radius: 50px;
     text-decoration: none;
+    transition: background-color 0.5s;
+    transition: color 0.5s;
     
+    &:hover, &:active, &:focus {
+        color: #fff;
+        background-color: #c328b1;
+    }
 }
 
 .btn-0 {
+    padding: 19px 50px;
     color: #fff;
     border: 2px solid #fff;
+    transition: background-color 0.5s;
+    transition: border 0.5s;
+
+    &:hover, &:active, &:focus {
+        color: #fff;
+        background-color: #c328b1;
+        border-color: #c328b1;
+    }
 }
