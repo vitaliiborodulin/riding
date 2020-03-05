@@ -5,13 +5,12 @@
 ### Tools
 
 1. *Less* (more simple and less code)
-2. *Imagemin* for img minification (no more third party services)
-3. *Jquery* link outer from web (for wp integration) 
-4. *Smartfrid* very flexible grid framefork
-5. *inputmask* for [form inputs](https://github.com/RobinHerbots/Inputmask)
-6. *slick-carousel* for slider
-7. *Panini* for build html
-8. *Rigger* for concat js
+2. *Imagemin* for img minification (no more third party services) 
+3. *Smartfrid* very flexible grid framefork
+4. *inputmask* for [form inputs](https://github.com/RobinHerbots/Inputmask)
+5. *slick-carousel* for slider
+6. *Panini* for build html
+7. *Rigger* for concat js
 
 ### Usage
 
