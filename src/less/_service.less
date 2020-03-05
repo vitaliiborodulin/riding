@@ -1,17 +1,32 @@
 .service {
     position: relative;
     z-index: 3;
-    min-height: 690px;
+    height: 690px;
+    .sm(height, 730px);
+    .xs(height, 940px);
     background-color: #f0f0f0;
     // background: #4fd2d6 url(../img/services-bg.jpg) no-repeat center/cover;
     background-image: linear-gradient( -34deg, rgb(185,67,250) 0%, rgb(195,40,177) 100%);
 }
 
+.service__line {
+    z-index: -1;
+    position: absolute;
+    background: #f0f0f0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 126px;
+    .xs(display, none);
+}
+
+
 .service__container {
-    margin-bottom: 65px;
+    margin-bottom: 30px;
+    
     position: relative;
     top: -30px;
-    padding: 30px 66px 69px;
+    padding: 30px 66px 45px;
     .sm-block({
         padding: 43px 47px 64px;
     });
@@ -24,7 +39,7 @@
 }
 
 .service__title {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
     color: rgba(185, 67, 250, .3);
     text-align: center;
     font-size: 55px;
@@ -34,6 +49,8 @@
 }
 
 .service__list {
+    justify-content: space-between;
+    align-items: center;
     .row-flex();
 }
 .service__item {
@@ -51,7 +68,7 @@
     &:not(:first-child)::before {
         content: '';
         position: absolute;
-        top: 30%;
+        top: 60%;
         transform: translateY(-50%);
         left: -20px;
         width: 2px;
@@ -68,11 +85,30 @@
 }
 
 .service__content {
+    position: relative;
     width: 330px;
     margin-left: 580px;
+    .lg-block({
+        margin-left: auto;
+    });
+    .sm-block({
+        // width: 100%;
+    });
+    .xs-block({
+        margin: 0 auto;
+    });
+    .xxxs-block({
+        width: 300px;
+        font-size: 20px;
+    });
     p {
         font-size: 24px;
+        .xxxs(font-size, 20px);
         line-height: 30px;
+        .price {
+            position: absolute;
+            bottom: -44px;
+        }
         .value {
             display: inline-block;
             margin-bottom: -10px;
@@ -81,44 +117,72 @@
             color: #ffffff;
         }
         .currency {
-            font-size: 30px;
+            display: inline-block;
+            background: url(../img/rouble.svg) no-repeat center/contain ;
+            width: 20px;
+            height: 23px;
+            // font-size: 30px;
         }
     }
 }
 
 .service__form {
-    margin-left: 486px;
+    // margin-left: 45%;
+    margin-left: auto;
     position: relative;
-    bottom: -90px;
+    bottom: -80px;
     width: 556px;
     // height: 355px;
     background-color: #ffffff;
     padding: 25px 67px 19px;
+    .lg-block({
+    });
+    .sm-block({
+        bottom: -146px;
+    });
+    .xs-block({
+        bottom: -210px;
+        margin: 0 auto;
+        font-size: 18px;
+        width: 100%;
+        padding: 65px 38px 41px;
+    });
     box-shadow: 0px 6px 6px 0px rgba(230, 230, 230, 0.75);
     border-radius: 15px;
     font-size: 13px;
     color: #000;
     text-align: center;
     p {
-        margin-bottom: 30px;
+        margin-bottom: 23px;
         line-height: 16px;
+        .sm-block({
+            line-height: 24px;
+        })
     }
     input {
-        margin-bottom: 20px;
+        margin-bottom: 13px;
         padding: 10px 12px;
         width: 200px;
         border: 1px solid #eee;
         border-radius: 5px;
+        .xs-block({
+            width: 100%;
+            // padding: 65px 48px 31px;
+        });
+        -webkit-appearance: none;
         outline: none;
         &:nth-child(odd) {
             margin-left: 17px;
+            .sm(margin-left,0);
         }
     }
     textarea {
-        margin-bottom: 18px;
+        -webkit-appearance: none;
+        margin-bottom: 10px;
         padding: 10px 12px;
         width: 100%;
         height: 100px;
+        .sm(height, 240px);
         border: 1px solid #eee;
         border-radius: 5px;
         outline: none;
@@ -127,7 +191,75 @@
 
     .service__btn {
         font-size: 14px;
+        .sm(font-size, 18px);
     }
 }
+
+.service__shape {
+    z-index: -2;
+    position: absolute;
+    background: url(../img/service-shape.svg) no-repeat center/contain ;
+    bottom: -80px;
+    left: -800px;
+    width: 652px;
+    height: 754px;
+    .lg-block({
+        // bottom: 126px;
+        // left: -393px;
+        bottom: -77px;
+        left: -762px;
+    });
+    .sm-block({
+        width: 453px;
+        height: 372px;
+        bottom: 416px;
+        left: -311px;
+    });
+    .xs-block({
+        bottom: 543px;
+        left: -246px;
+    });
+    .xxs-block({
+        bottom: 560px;
+    })
+}
+
+.service__people {
+    z-index: -1;
+    position: absolute;
+    background: url(../img/service-people.svg) no-repeat center/contain ;
+    bottom: 190px;
+    left: -487px;
+    width: 448px;
+    height: 322px;
+    .lg-block({
+        bottom: 190px;
+        left: -452px;
+    });
+    .sm-block({
+        width: 316px;
+        height: 227px;
+        bottom: 525px;
+        left: -103px;
+    });
+    .xs-block({
+        width: 312px;
+        height: 224px;
+        bottom: 664px;
+        left: 12%;
+        background-size: 80%;
+        z-index: 1;
+    });
+    .xxs-block({
+        bottom: 690px;
+        left: 6%;
+    });
+    .xxxs-block({
+        bottom: 736px;
+        left: -40px;
+    })
+}
+
+
 
 

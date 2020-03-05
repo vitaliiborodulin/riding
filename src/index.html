@@ -23,6 +23,8 @@ title: АртКонсьерж
 
 <section class="service">
     <div class="wrapper">
+
+        <div class="service__line"></div>
         
         <div class="service__container">
             <h2 class="service__title">Обзор по городу включает:</h2>
@@ -33,18 +35,21 @@ title: АртКонсьерж
             </ul>
         </div>
 
-         <!-- <div class="service__content">
-            <p><b>Прокачайте</b> свою поездку всего за <span class="value">450</span> <span class="currency">&#x20bd;</span></p>
-        </div>  -->
+        <div class="service__content">
+            <p><b>Прокачайте</b> свою поездку <br> всего за <span class="price"><span class="value">450</span> <span class="currency"></span></span></p>
+        </div> 
 
-        <form class="service__form" action="#" method="POST">
+        <form class="service__form" action="#" method="get">
             <p>Заполните заявку и наш консьерж свяжется с Вами для уточнения подробностей</p>
-            <input type="text" name="name" placeholder="Ваше имя">
-            <input type="text" name="mail" placeholder="E-mail">
-            <input type="text" name="where" placeholder="Куда едете?">
-            <input type="text" name="tel" placeholder="Моб. телефон">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="text" name="where" placeholder="Куда едете?" required>
+            <input type="email" name="mail" placeholder="E-mail" required>
+            <input type="tel" name="tel" placeholder="Моб. телефон">
             <textarea name="text">Ваш комментарий</textarea>
             <button class="btn service__btn" type="submit">Отправить заявку</button>
+
+            <div class="service__shape"></div>
+            <div class="service__people"></div>
         </form>
 
     </div>
@@ -52,7 +57,7 @@ title: АртКонсьерж
 
 <section class="callback">
     <div class="wrapper">
-        <div class="callback__slider-wrapper">
+        <!-- <div class="callback__slider-wrapper">
             <h2 class="callback__title">Отзывы</h2>
 
                 <div class="callback__slider">
@@ -79,6 +84,6 @@ title: АртКонсьерж
 
                 </div>
 
-        </div>
+        </div> -->
     </div>
 </section> 
