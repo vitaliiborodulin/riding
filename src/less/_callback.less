@@ -1,14 +1,31 @@
 .callback {
     padding-top: 100px;
     padding-bottom: 40px;
-    min-height: 740px;
-    background: #fff url(../img/callback-bg.svg) no-repeat;
-    background-position-x: 657px;
-    background-position-y: 45px;
-    background-size: 50%;
+    .md(padding-top, 130px);
+    .sm-block({
+        padding-top: 520px;
+        padding-bottom: 98px;
+    });
+    .xs-block({
+        padding-top: 20%;
+    });
+    .xxs-block({
+        padding-top: 10%;
+    });
+    .xxxs-block({
+        padding-top: 30%;
+    });
+    min-height: 630px;
+    // background: #fff url(../img/callback-bg.svg) no-repeat;
+    background: #fff;
+    overflow: hidden;
+    // background-position-x: 657px;
+    // background-position-y: 45px;
+    // background-size: 50%;
 }
 
 .callback__title {
+    .sm(text-align, center);
     margin-bottom: 50px;
     font-size: 35px;
     font-weight: 700;
@@ -17,43 +34,100 @@
 }
 
 .callback__slider-wrapper {
+    position: relative;
+    z-index: 3;
     width: 750px;
+    .md(width, 90%);
+    .sm(width, 100%);
     margin: 0 auto;
+    // border: 1px solid #000;
+}
+
+.callback__shape {
+    z-index: -1;
+    position: absolute;
+    background: url(../img/callback-bg.svg) no-repeat center/contain ;
+    top: -131px;
+    right: -369px;
+    width: 779px;
+    height: 638px;
+    .sm-block({
+        width: 596px;
+        height: 488px;
+        top: -347px;
+    });
 }
 
 .callback__slider {
-    position: relative;
-    z-index: 50;
+    // position: relative;
+    // z-index: 50;
     background-color: #ffffff;
     box-shadow: 6px 6px 6px rgba(230, 230, 230, 0.75);
     border: 1px solid #eee;
     border-radius: 15px;
+    // overflow-x: hidden;
 }
 
 .callback__slide {
+    display: flex;
     width: 750px;
     height: 250px;
-    // text-align: center;
-    
-    outline: none;
+    .sm(width, 100%);
+    .xs-block({
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 530px;
+    });
 }
 
 
 .slide__image {
-    // width: 242px;
-    // height: auto;
+    width: 242px;
+    height: 250px;
+    flex-shrink: 0;
+    .xs-block({
+        text-align: center;
+        width: 216px;
+        height: 216px;
+    });
+    img {
+        border-radius: 15px 0 0 15px;
+        // position: relative;
+        // top: -90px;
+        .xs-block({
+            margin: 0 auto;
+            border-radius: 50%;
+        });
+    }
 }
 
 .slide__descr {
-    // padding: 79px 110px 69px 106px;
+    // width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    padding: 60px 110px 69px 106px;
     color: #000;
     font-size: 14px;
-
+    .sm-block({
+        padding: 60px 46px 69px 42px;
+    });
+    .xs-block({
+        text-align: center;
+        font-size: 18px;
+    });
+    .xxs(font-size, 13px);
     blockquote {
+        // width: 300px;
         margin-bottom: 20px;
         line-height: 18px;
+        .xs(line-height, 24px);
+        .xxs(line-height, 15px);
     }
-
 }
+
+
 
 

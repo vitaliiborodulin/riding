@@ -21,8 +21,7 @@ module.exports = {
             fields: '20px'
         },
         xxs: {
-            width: '480px'
-            
+            width: '480px'  
         },
         xxxs: {
 			width: '350px',

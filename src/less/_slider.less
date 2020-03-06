@@ -1,6 +1,7 @@
 .slider-arrow {
     position: absolute;
     top: 0;
+    .xs(top, -135px);
     width: 13px;
     height: 100%;
     z-index: 50;
@@ -11,11 +12,28 @@
 }
 
 .slider-arrow--left {
-    left: -24px;
+    left: -36px;
+    .xs(left, 4%);
     background: url(../img/slider-arrow-left.png) center no-repeat;
 }
 
 .slider-arrow--right {
-    right: -24px;
+    right: -36px;
+    .xs(right, 4%);
     background: url(../img/slider-arrow-right.png) center no-repeat;
+}
+
+.slick-dots {
+    bottom: -60px;
+}
+
+.slick-dots li {
+    width: 11px;
+    height: 11px;
+    border: 1px solid @accent;
+    border-radius: 50%;
+
+    &.slick-active {
+        background-color: @accent;
+    }
 }
