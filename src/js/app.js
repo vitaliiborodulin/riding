@@ -8,6 +8,4 @@ $(function(){
     //= components/inputmask.js
     //= components/slick.js
 
-    console.log(1);
-
 });
