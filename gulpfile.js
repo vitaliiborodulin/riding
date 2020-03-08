@@ -25,7 +25,7 @@ const imageminPngquant = require('imagemin-pngquant');
 const plumber = require("gulp-plumber");
 
 const ghPages = require('gh-pages');
-// const path = require('path');
+const pathDeploy = require('path');
 
 const isDev = process.argv.includes('--dev');
 const isProd = !isDev;
@@ -157,7 +157,7 @@ function grid(done) {
 }
 
 function deploy(cb) {
-    ghPages.publish(path.join(process.cwd(), './build'), cb);
+    ghPages.publish(pathDeploy.join(process.cwd(), './build'), cb);
 }
 
 /* Exports Tasks */
